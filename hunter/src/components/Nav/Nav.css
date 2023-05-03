@@ -1,0 +1,10 @@
+.navContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.rightText {
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+}
