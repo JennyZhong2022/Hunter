@@ -23,7 +23,7 @@ const imageData = [
   {
     id: 1,
     title: "babyHunter",
-    subheader: "September, 2016",
+    subheader: 2016,
     image: babyHunter,
     alt: "Baby Hunter",
     height: 234,
@@ -35,7 +35,7 @@ const imageData = [
   {
     id: 2,
     title: "Training Session",
-    subheader: "September, 2016",
+    subheader: 2016,
     image: training3,
     alt: "Training Session",
     height: 234,
@@ -47,7 +47,7 @@ const imageData = [
   {
     id: 3,
     title: "Graduation",
-    subheader: "September, 2016",
+    subheader: 2016,
     image: graduate,
     alt: "Graduation",
     height: 420,
@@ -59,7 +59,7 @@ const imageData = [
   {
     id: 4,
     title: "Melbourne City Travel",
-    subheader: "September, 2016",
+    subheader: 2016,
     image: cityFirstTime,
     alt: "Melbourne City Travel",
     height: 234,
@@ -71,7 +71,7 @@ const imageData = [
   {
     id: 5,
     title: "Bunnings Shopping",
-    subheader: "September, 2016",
+    subheader: 2016,
     image: bunningsFirst,
     alt: "Bunnings Shopping",
     height: 420,
@@ -105,9 +105,15 @@ const Growth = () => {
 
   return (
     <div className="growthPage">
+      <h2 className="bigH">Growth Journey</h2>
       <Grid templateColumns="repeat(5, 1fr)" gap={6}>
         {imageData.map((data) => (
-          <GridItem w="100%" h="760" bg="blue.500" key={data.id}>
+          <GridItem
+            w="100%"
+            h={expanded[3] || expanded[5] ? "950" : "790"}
+            bg="blue.500"
+            key={data.id}
+          >
             <Card sx={{ maxWidth: 345 }}>
               <CardHeader title={data.title} subheader={data.subheader} />
               <CardMedia

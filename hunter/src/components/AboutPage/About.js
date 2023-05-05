@@ -4,7 +4,7 @@ import { Divider, Stack, Text } from "@chakra-ui/react";
 const About = () => {
   return (
     <div className="aboutPage">
-      <h2 className="aboutMeH1">About Me</h2>
+      <h2 className="bigH">About Me</h2>
       <Stack direction="row" h="600px" p={110}>
         <div className="leftContainer">
           <Text className="aboutPageTextLeft">
@@ -20,7 +20,7 @@ const About = () => {
           </Text>
           <Text>
             {" "}
-            I'm Hunter, a friendly 9-year-old Labrador Retriever, and I'm
+            I'm Hunter, a friendly 8-year-old Labrador Retriever, and I'm
             excited to share my story with you. Ever since my mom brought me
             home as a tiny pup, I've loved spending quality time with her. As I
             grew up, she began caring for other puppies and dogs, and I quickly

@@ -13,7 +13,6 @@ const Nav = () => {
         <span>About</span>
         <span>Hunter's growth</span>
         <span>Reviews</span>
-        <span>Book</span>
         <span>Contact</span>
       </div>
       <div className="links">
