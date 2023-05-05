@@ -1,27 +1,27 @@
 import "./Nav.css";
-import { UilFacebook } from "@iconscout/react-unicons";
+import { UilFacebookF } from "@iconscout/react-unicons";
 import { UilInstagram } from "@iconscout/react-unicons";
 
 const Nav = () => {
   return (
     <div className="navContainer">
-      <div className="hunterNavText">
+      <div className="leftText">
         <span>Hunter's Garden</span>
       </div>
-      <div className="rightText">
+      <div className="middleText">
         <span>Home</span>
         <span>About</span>
         <span>Hunter's growth</span>
-        <span>Book</span>
         <span>Reviews</span>
+        <span>Book</span>
         <span>Contact</span>
       </div>
       <div className="links">
         <span>
-          <UilFacebook color="#3DBECC" />
+          <UilFacebookF color="white" />
         </span>
         <span>
-          <UilInstagram color="#3DBECC" />
+          <UilInstagram color="white" />
         </span>
       </div>
     </div>
