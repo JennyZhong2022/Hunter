@@ -2,6 +2,7 @@ import { Divider, Stack, Text } from "@chakra-ui/react";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import HomeIcon from "@mui/icons-material/Home";
+import TextField from "@mui/material/TextField";
 import "./Contact.css";
 
 const Contact = () => {
@@ -19,7 +20,22 @@ const Contact = () => {
             <Text className="aboutPageTextLeft">Hunter's address</Text>
           </div>
           <Divider orientation="vertical" padding={40} />
-          <div className="forms"></div>
+          <div className="forms">
+            <TextField id="outlined-basic1" label="Name" variant="outlined" />
+            <TextField
+              id="outlined-basic2"
+              label="Enter email"
+              variant="outlined"
+            />
+
+            <TextField
+              id="outlined-basic3"
+              label="Message"
+              multiline
+              rows={6}
+              variant="outlined"
+            />
+          </div>
         </Stack>
       </div>
     </>

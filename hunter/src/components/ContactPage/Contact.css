@@ -1,3 +1,16 @@
 .contactPage {
   background-color: #f7f5f2;
 }
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.forms .MuiTextField-root {
+  width: 400px;
+  margin-bottom: 10px;
+}
