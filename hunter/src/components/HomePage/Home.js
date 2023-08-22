@@ -75,9 +75,17 @@ const ImageMarked = styled("span")(({ theme }) => ({
 }));
 
 const Home = () => {
+  const handleSpanClick5 = () => {
+    const newY = window.screenTop + 4150;
+    window.scrollTo({
+      top: newY,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="homePage">
       <ImageButton
+        onClick={handleSpanClick5}
         focusRipple
         style={{
           width: images.width,

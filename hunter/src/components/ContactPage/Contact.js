@@ -3,6 +3,9 @@ import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import HomeIcon from "@mui/icons-material/Home";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+
 import "./Contact.css";
 
 const Contact = () => {
@@ -20,6 +23,7 @@ const Contact = () => {
             <Text className="aboutPageTextLeft">Hunter's address</Text>
           </div>
           <Divider orientation="vertical" padding={40} />
+
           <div className="forms">
             <TextField id="outlined-basic1" label="Name" variant="outlined" />
             <TextField
@@ -35,6 +39,14 @@ const Contact = () => {
               rows={6}
               variant="outlined"
             />
+            <Button
+              variant="contained"
+              size="large"
+              style={{ marginLeft: "280px" }}
+              endIcon={<SendIcon />}
+            >
+              Send
+            </Button>
           </div>
         </Stack>
       </div>
