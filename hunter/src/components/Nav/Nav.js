@@ -4,15 +4,15 @@ import { UilInstagram } from "@iconscout/react-unicons";
 
 const Nav = () => {
   const goFacebook = () => {
-    window.open("https://www.facebook.com");
+    window.open("https://www.facebook.com/jessica.liu.5268");
   };
 
   const goInstagram = () => {
-    window.open("https://www.instagram.com");
+    window.open("https://www.instagram.com/lyeeeee0225/");
   };
 
   const handleSpanClick = (event) => {
-    const newY = Number(event.currentTarget.getAttribute("data-scrollTo"));
+    const newY = Number(event.currentTarget.getAttribute("data-scrollto"));
     window.scrollTo({
       top: newY,
       behavior: "smooth",
@@ -22,24 +22,24 @@ const Nav = () => {
   return (
     <div className="navContainer">
       <div className="leftText">
-        <span data-scrollTo="0" onClick={handleSpanClick}>
+        <span data-scrollto="0" onClick={handleSpanClick}>
           Hunter's Garden
         </span>
       </div>
       <div className="middleText">
-        <span data-scrollTo="0" onClick={handleSpanClick}>
+        <span data-scrollto="0" onClick={handleSpanClick}>
           Home
         </span>
-        <span data-scrollTo="800" onClick={handleSpanClick}>
+        <span data-scrollto="800" onClick={handleSpanClick}>
           About
         </span>
-        <span data-scrollTo="1700" onClick={handleSpanClick}>
+        <span data-scrollto="1700" onClick={handleSpanClick}>
           Hunter's growth
         </span>
-        <span data-scrollTo="2700" onClick={handleSpanClick}>
+        <span data-scrollto="2700" onClick={handleSpanClick}>
           Reviews
         </span>
-        <span data-scrollTo="4200" onClick={handleSpanClick}>
+        <span data-scrollto="4200" onClick={handleSpanClick}>
           Contact
         </span>
       </div>
