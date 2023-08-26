@@ -28,7 +28,9 @@ jobs:
           npm install
 
       - name: Build React App
-        run: npm run build
+        run: |
+          cd hunter
+          npm run build
 
       - name: Deploy static assets to S3 bucket
         run: aws s3 sync ./build/ s3://${{ secrets.BUCKET }} --delete
