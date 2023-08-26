@@ -12,18 +12,6 @@ const Contact = () => {
   const [yourName, setYourName] = useState("");
   const [yourEmail, setYourEmail] = useState("");
 
-  const handleEmailValidation = (e) => {
-    const inputValue = e.target.value;
-
-    if (inputValue.length === 0) {
-      e.target.setCustomValidity("Please fill in this field");
-    } else if (!inputValue.includes("@") || !inputValue.includes(".")) {
-      e.target.setCustomValidity("Please provide a valid email address");
-    } else {
-      e.target.setCustomValidity("");
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here,  can handle the form submission logic.
@@ -63,12 +51,12 @@ const Contact = () => {
             />
             <TextField
               required
+              type="email"
               id="outlined-basic2"
               label="Enter email"
               variant="outlined"
               value={yourEmail}
               onChange={handleInputEmail}
-              onInvalid={handleEmailValidation}
             />
             <TextField
               id="outlined-basic3"
