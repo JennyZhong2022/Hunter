@@ -33,4 +33,4 @@ jobs:
           npm run build
 
       - name: Deploy static assets to S3 bucket
-        run: aws s3 sync ./build/ s3://${{ secrets.BUCKET }} --delete
+        run: aws s3 sync ./hunter/build/ s3://${{ secrets.BUCKET }} --delete
