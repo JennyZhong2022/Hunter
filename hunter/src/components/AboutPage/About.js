@@ -35,6 +35,10 @@ const About = () => {
             lasting memories. Trust us to provide the best home away from home
             experience for your pet!{" "}
           </Text>
+          <Text style={{ fontWeight: "900" }}>
+            $15 per day including pet food. For more information, please contact
+            us!
+          </Text>
           <Text>
             Choose Hunter's Garden, and let your four-legged companion thrive in
             a happy and nurturing setting. We can't wait to meet you and your

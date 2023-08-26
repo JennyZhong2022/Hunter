@@ -7,14 +7,42 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import "./Contact.css";
 import { useState } from "react";
+import emailjs from "emailjs-com";
+import wechat from "../../pictures/wechat.png";
+
+const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 
 const Contact = () => {
   const [yourName, setYourName] = useState("");
   const [yourEmail, setYourEmail] = useState("");
+  const [yourMessage, setYourMessage] = useState("");
+  const [emailStatus, setEmailStatus] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here,  can handle the form submission logic.
+    const templateParams = {
+      from_name: yourName,
+      from_email: yourEmail,
+      message: yourMessage,
+    };
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID).then(
+      (response) => {
+        setEmailStatus("Email sent successfully!");
+        setTimeout(() => {
+          setEmailStatus(null);
+        }, 4000);
+      },
+      (err) => {
+        setEmailStatus("There was an error sending the email.");
+        setTimeout(() => {
+          setEmailStatus(null);
+        }, 4000);
+      }
+    );
   };
 
   const handleInputName = (e) => {
@@ -23,6 +51,10 @@ const Contact = () => {
 
   const handleInputEmail = (e) => {
     setYourEmail(e.target.value);
+  };
+
+  const handleInputMessage = (e) => {
+    setYourMessage(e.target.value);
   };
 
   return (
@@ -35,6 +67,8 @@ const Contact = () => {
             <Text className="aboutPageTextLeft">0433080225</Text>
             <AlternateEmailIcon fontSize="large" />
             <Text className="aboutPageTextLeft">liuyeemail@gmail.com</Text>
+            <img src={wechat} alt="weChat" />
+            <Text className="aboutPageTextLeft">liuye0225</Text>
             <HomeIcon fontSize="large" />
             <Text className="aboutPageTextLeft">Narre Warren, VIC 3805</Text>
           </div>
@@ -64,7 +98,10 @@ const Contact = () => {
               multiline
               rows={6}
               variant="outlined"
+              onChange={handleInputMessage}
             />
+            {emailStatus && <p className="emailStatusMessage">{emailStatus}</p>}
+
             <Button
               variant="contained"
               size="large"
