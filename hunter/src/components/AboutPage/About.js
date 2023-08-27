@@ -36,7 +36,7 @@ const About = () => {
             experience for your pet!{" "}
           </Text>
           <Text style={{ fontWeight: "900" }}>
-            $15 per day including pet food. For more information, please contact
+            $40 per day including pet food. For more information, please contact
             us!
           </Text>
           <Text>
