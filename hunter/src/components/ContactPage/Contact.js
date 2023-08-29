@@ -1,4 +1,4 @@
-import { Divider, Stack, Text } from "@chakra-ui/react";
+import { Divider, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import HomeIcon from "@mui/icons-material/Home";
@@ -57,12 +57,16 @@ const Contact = () => {
     setYourMessage(e.target.value);
   };
 
+  const [isSmallerThan720] = useMediaQuery("(max-width: 720px)");
+
   return (
     <>
       <div className="contactPage">
         <h2 className="bigH">Contact Me</h2>
-        <Stack direction="row" h="600px" p={110}>
-          <div className="leftContainer">
+        <Stack direction={isSmallerThan720 ? "column" : "row"} h="auto" p={8}>
+          <div
+            className={`leftContainer ${isSmallerThan720 ? "hideDiver" : ""}`}
+          >
             <PhoneEnabledIcon fontSize="large" />
             <Text className="aboutPageTextLeft">0433080225</Text>
             <AlternateEmailIcon fontSize="large" />
@@ -72,7 +76,7 @@ const Contact = () => {
             <HomeIcon fontSize="large" />
             <Text className="aboutPageTextLeft">Narre Warren, VIC 3805</Text>
           </div>
-          <Divider orientation="vertical" padding={40} />
+          <Divider orientation="vertical" padding={30} />
 
           <form className="forms" onSubmit={handleSubmit}>
             <TextField
@@ -103,9 +107,9 @@ const Contact = () => {
             {emailStatus && <p className="emailStatusMessage">{emailStatus}</p>}
 
             <Button
+              className="button-container"
               variant="contained"
               size="large"
-              style={{ marginLeft: "280px" }}
               endIcon={<SendIcon />}
               type="submit"
             >

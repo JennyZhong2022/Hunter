@@ -1,18 +1,25 @@
 import "./About.css";
-import { Divider, Stack, Text } from "@chakra-ui/react";
+import { Divider, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 
 const About = () => {
+  const [isSmallerThan720] = useMediaQuery("(max-width: 720px)");
+
   return (
     <div className="aboutPage">
       <h2 className="bigH">About Me</h2>
-      <Stack direction="row" h="600px" p={110}>
-        <div className="leftContainer">
+      <Stack
+        direction={isSmallerThan720 ? "column" : "row"}
+        h="auto"
+        p={isSmallerThan720 ? 8 : 110}
+        spacing={isSmallerThan720 ? -50 : 8}
+      >
+        <div className={`leftContainer ${isSmallerThan720 ? "hideDiver" : ""}`}>
           <Text className="aboutPageTextLeft">
             Discover the Perfect Home Away From Home for Your Furry Friend at
             Hunter's Garden!
           </Text>
         </div>
-        <Divider orientation="vertical" padding={40} />
+        <Divider orientation="vertical" padding={50} />
         <div className="aboutPageTextRight">
           <Text>
             Welcome to Hunter's Garden, the ultimate haven for your beloved

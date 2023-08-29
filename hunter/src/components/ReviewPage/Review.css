@@ -3,5 +3,24 @@
 }
 
 .reviewLine {
-  margin-left: 100px;
+  margin: 0 1rem;
 }
+
+/* Responsive height */
+@media (min-width: 1024px) {
+  .responsiveHeight {
+    height: 395px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .responsiveHeight {
+    height: auto;
+  }
+}
+
+/* @media (max-width: 720px) {
+  .reviewLine {
+    margin-left: 1rem;
+  }
+} */

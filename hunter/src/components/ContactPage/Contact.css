@@ -11,13 +11,49 @@
 }
 
 .forms .MuiTextField-root {
-  width: 400px;
-  margin-bottom: 10px;
+  width: 100%;
+  width: 25rem;
+  margin-bottom: 0.625rem;
 }
 
 .emailStatusMessage {
   color: rgb(0, 128, 0);
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-size: larger;
+}
+
+.button-container {
+  margin-left: 18rem;
+}
+
+@media only screen and (max-width: 720px) {
+  .forms .MuiTextField-root {
+    width: 90%;
+    margin-bottom: 0.625rem;
+  }
+  .leftContainer {
+    padding: 0 3rem;
+  }
+}
+
+/* For medium screens */
+@media (max-width: 1024px) {
+  .button-container {
+    margin-left: 12rem;
+  }
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+  .button-container {
+    margin-left: 6rem;
+  }
+}
+
+/* For extra-small screens */
+@media (max-width: 480px) {
+  .button-container {
+    margin-left: 3rem;
+  }
 }

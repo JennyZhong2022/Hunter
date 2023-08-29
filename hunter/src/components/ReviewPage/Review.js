@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { green } from "@mui/material/colors";
 import StarIcon from "@mui/icons-material/Star";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, useMediaQuery } from "@chakra-ui/react";
 
 import "./Review.css";
 
@@ -78,74 +78,32 @@ const reviews3 = [
 ];
 
 const Review = () => {
+  const [isLargerThan720] = useMediaQuery("(min-width: 720px)");
+  const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)");
+
+  const getTemplateColumns = () => {
+    if (isLargerThan1024) {
+      return "repeat(3, 1fr)";
+    }
+    if (isLargerThan720) {
+      return "repeat(2, 1fr)";
+    }
+    return "repeat(1, 1fr)";
+  };
+
   return (
     <div className="reviewPage">
       <h2 className="bigH">Review</h2>
       <div className="reviewLine">
-        <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-          {reviews1.map((review) => (
-            <GridItem w="100%" h="395" bg="blue.500" key={review.id}>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardHeader
-                  avatar={
-                    <Avatar sx={{ bgcolor: green[500] }} aria-label="review">
-                      R
-                    </Avatar>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      {[...Array(5)].map((_, index) => (
-                        <StarIcon key={index} sx={{ color: green[500] }} />
-                      ))}
-                    </IconButton>
-                  }
-                  title={review.name}
-                  subheader={review.year}
-                />
-
-                <CardContent>
-                  <Typography variant="body2" color="text.secondary">
-                    {review.reviewContent}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </GridItem>
-          ))}
-        </Grid>
-        <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-          {reviews2.map((review) => (
-            <GridItem w="100%" h="395" bg="blue.500" key={review.id}>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardHeader
-                  avatar={
-                    <Avatar sx={{ bgcolor: green[500] }} aria-label="review">
-                      R
-                    </Avatar>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      {[...Array(5)].map((_, index) => (
-                        <StarIcon key={index} sx={{ color: green[500] }} />
-                      ))}
-                    </IconButton>
-                  }
-                  title={review.name}
-                  subheader={review.year}
-                />
-
-                <CardContent>
-                  <Typography variant="body2" color="text.secondary">
-                    {review.reviewContent}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </GridItem>
-          ))}
-        </Grid>{" "}
-        <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-          {reviews3.map((review) => (
-            <GridItem w="100%" h="395" bg="blue.500" key={review.id}>
-              <Card sx={{ maxWidth: 345 }}>
+        <Grid templateColumns={getTemplateColumns()} gap={6}>
+          {[...reviews1, ...reviews2, ...reviews3].map((review) => (
+            <GridItem
+              w="100%"
+              className="responsiveHeight"
+              bg="blue.500"
+              key={review.id}
+            >
+              <Card sx={{ maxWidth: "100%" }}>
                 <CardHeader
                   avatar={
                     <Avatar sx={{ bgcolor: green[500] }} aria-label="review">

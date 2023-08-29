@@ -3,11 +3,11 @@
 .navContainer {
   display: flex;
   justify-content: space-around;
-  height: 70px;
+  height: 4rem;
   background-color: #242027;
   color: white;
   align-items: center;
-  font: 1.1em sans-serif;
+  font: 1rem sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,17 +18,18 @@
 .leftText {
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
-  font-size: x-large;
+  font-size: 1.5rem;
 }
 
 .middleText {
-  width: 600px;
+  max-width: 37.5rem;
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
 .links {
-  width: 100px;
+  width: 6.25rem;
   display: flex;
   justify-content: space-around;
 }
@@ -36,3 +37,29 @@
 span:hover {
   cursor: pointer;
 }
+
+/* For screens smaller than 720px */
+@media screen and (max-width: 720px) {
+  .middleText {
+    /* flex-direction: column;
+    align-items: center;
+    width: auto; */
+    display: none;
+  }
+  .links {
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .leftText {
+    font-size: 1.5rem;
+  }
+}
+/* 
+@media screen and (max-width: 64rem) {
+  .navContainer {
+    height: 4rem;
+  }
+} */

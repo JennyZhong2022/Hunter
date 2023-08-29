@@ -9,7 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, useMediaQuery } from "@chakra-ui/react";
 
 import "./Growth.css";
 
@@ -103,14 +103,31 @@ const Growth = () => {
     }));
   };
 
+  const [isSmallThan480] = useMediaQuery("(max-width: 480px)");
+  const [isSmallerThan720] = useMediaQuery("(max-width: 720px)");
+  const [isSmallThan1024] = useMediaQuery("(max-width: 1024px)");
+
+  const getTemplateColumns = () => {
+    if (isSmallThan480) {
+      return "repeat(1, 1fr)";
+    }
+    if (isSmallerThan720) {
+      return "repeat(2, 1fr)";
+    }
+    if (isSmallThan1024) {
+      return "repeat(3, 1fr)";
+    }
+    return "repeat(5, 1fr)";
+  };
+
   return (
     <div className="growthPage">
       <h2 className="bigH">Growth Journey</h2>
-      <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+      <Grid templateColumns={getTemplateColumns} gap={6}>
         {imageData.map((data) => (
           <GridItem
             w="100%"
-            h={expanded[3] || expanded[5] ? "950" : "790"}
+            // h={expanded[3] || expanded[5] ? "950" : "790"}
             bg="blue.500"
             key={data.id}
           >

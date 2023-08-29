@@ -5,21 +5,13 @@
 }
 
 .bigH {
-  font-size: 138px;
+  font-size: 4rem; /* Smaller font for mobile */
   color: #1c2528;
-  margin-top: 0px;
-  margin-left: 10px;
-  margin-bottom: 40px;
+  margin: 0 0.5rem 2rem 0.5rem; /* Use rem */
   font-family: "Sorts Mill Goudy";
   line-height: 1;
-  padding-top: 86px;
+  padding-top: 5rem; /* Use rem */
   font-weight: 400;
-}
-
-@media screen and (max-width: 1024px) {
-  .aboutMeH1 {
-    font-size: 100px;
-  }
 }
 
 .leftContainer {
@@ -31,37 +23,52 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -28px; /* Adjust the distance from the left text */
-  width: 2px; /* Customize the line width */
-  background-color: gray; /* Customize the line color */
+  right: -2rem; /* Use rem */
+  width: 0.125rem;
+  background-color: gray;
+}
+
+.leftContainer.hideDiver::after {
+  display: none;
+}
+
+.leftContainer,
+.aboutPageTextRight {
+  font-size: 1.2rem;
 }
 
 .aboutPageTextRight p:first-child {
   margin-top: 0;
 }
 
-.aboutPageTextRight p {
-  padding: 0;
-  margin: 30px 0;
-  display: block;
-  font-size: 1.2rem;
+.aboutPageTextRight p,
+.aboutPageTextLeft {
   font-family: "Raleway", sans-serif;
+  font-size: 1rem; /* Start with a standard font size for mobile */
+  margin: 1.5rem 0;
 }
 
 .aboutPageTextLeft {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.2rem;
   font-weight: 800;
 }
+@media screen and (max-width: 64rem) {
+  .bigH {
+    font-size: 3rem;
+  }
 
-@media screen and (max-width: 1024px) {
-  .aboutPageTextRight p {
-    font-size: 0.9rem;
+  .leftContainer,
+  .aboutPageTextRight {
+    font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 720px) {
-  .aboutPageTextRight p {
-    font-size: 0.5rem;
+@media screen and (max-width: 45rem) {
+  .bigH {
+    font-size: 2rem;
+  }
+
+  .leftContainer,
+  .aboutPageTextRight {
+    font-size: 0.8rem;
   }
 }
