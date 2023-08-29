@@ -123,46 +123,43 @@ const Growth = () => {
   return (
     <div className="growthPage">
       <h2 className="bigH">Growth Journey</h2>
-      <Grid templateColumns={getTemplateColumns} gap={6}>
-        {imageData.map((data) => (
-          <GridItem
-            w="100%"
-            // h={expanded[3] || expanded[5] ? "950" : "790"}
-            bg="blue.500"
-            key={data.id}
-          >
-            <Card sx={{ maxWidth: 345 }}>
-              <CardHeader title={data.title} subheader={data.subheader} />
-              <CardMedia
-                component="img"
-                height={data.height}
-                image={data.image}
-                alt={data.alt}
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary" paragraph>
-                  {data.imageBrief}
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <ExpandMore
-                  expand={expanded[data.id]}
-                  onClick={() => handleExpandClick(data.id)}
-                  aria-expanded={expanded[data.id]}
-                  aria-label="show more"
-                >
-                  <ExpandMoreIcon />
-                </ExpandMore>
-              </CardActions>
-              <Collapse in={expanded[data.id]} timeout="auto" unmountOnExit>
+      <div className="growthPageGrid">
+        <Grid templateColumns={getTemplateColumns} gap={6}>
+          {imageData.map((data) => (
+            <GridItem w="100%" bg="blue.500" key={data.id}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardHeader title={data.title} subheader={data.subheader} />
+                <CardMedia
+                  component="img"
+                  height={data.height}
+                  image={data.image}
+                  alt={data.alt}
+                />
                 <CardContent>
-                  <Typography paragraph>{data.imageContent}</Typography>
+                  <Typography variant="body2" color="text.secondary" paragraph>
+                    {data.imageBrief}
+                  </Typography>
                 </CardContent>
-              </Collapse>
-            </Card>
-          </GridItem>
-        ))}
-      </Grid>
+                <CardActions disableSpacing>
+                  <ExpandMore
+                    expand={expanded[data.id]}
+                    onClick={() => handleExpandClick(data.id)}
+                    aria-expanded={expanded[data.id]}
+                    aria-label="show more"
+                  >
+                    <ExpandMoreIcon />
+                  </ExpandMore>
+                </CardActions>
+                <Collapse in={expanded[data.id]} timeout="auto" unmountOnExit>
+                  <CardContent>
+                    <Typography paragraph>{data.imageContent}</Typography>
+                  </CardContent>
+                </Collapse>
+              </Card>
+            </GridItem>
+          ))}
+        </Grid>
+      </div>
     </div>
   );
 };

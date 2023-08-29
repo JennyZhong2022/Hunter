@@ -89,7 +89,7 @@ const Home = () => {
         focusRipple
         style={{
           width: images.width,
-          height: images.height,
+          height: "100vh",
         }}
       >
         <ImageSrc style={{ backgroundImage: `url(${images.url})` }} />

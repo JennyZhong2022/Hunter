@@ -58,12 +58,17 @@ const Contact = () => {
   };
 
   const [isSmallerThan720] = useMediaQuery("(max-width: 720px)");
+  const [isSmallerThan1024] = useMediaQuery("(max-width: 1024px)");
 
   return (
     <>
       <div className="contactPage">
         <h2 className="bigH">Contact Me</h2>
-        <Stack direction={isSmallerThan720 ? "column" : "row"} h="auto" p={8}>
+        <Stack
+          direction={isSmallerThan720 ? "column" : "row"}
+          h="auto"
+          p={isSmallerThan720 ? "8" : isSmallerThan1024 ? "90" : "110"}
+        >
           <div
             className={`leftContainer ${isSmallerThan720 ? "hideDiver" : ""}`}
           >

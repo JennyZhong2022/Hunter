@@ -23,7 +23,7 @@ const reviews1 = [
     name: "Kiky Zhou",
     year: 2019,
     reviewContent:
-      "Hunter's Garden not only provides exceptional pet sitting services but also goes the extra mile by offering personalized activity plans tailored to each pet's interests and energy levels. Their staff's genuine love for animals shines through in every interaction, creating a warm and nurturing environment that leaves pet owners feeling at ease. With their flexible scheduling options and commitment to maintaining open communication, Hunter's Garden has truly set the gold standard for pet care services in the community.",
+      "Hunter's Garden not only provides exceptional pet sitting services but also goes the extra mile by offering personalized activity plans tailored to each pet's interests and energy levels. Jessica's genuine love for animals shines through in every interaction, creating a warm and nurturing environment that leaves pet owners feeling at ease. Hunter's Garden has truly set the gold standard for pet care services in the community.",
   },
   {
     id: 3,
@@ -94,7 +94,7 @@ const Review = () => {
   return (
     <div className="reviewPage">
       <h2 className="bigH">Review</h2>
-      <div className="reviewLine">
+      <div className="reviewPageGrid">
         <Grid templateColumns={getTemplateColumns()} gap={6}>
           {[...reviews1, ...reviews2, ...reviews3].map((review) => (
             <GridItem
@@ -102,6 +102,7 @@ const Review = () => {
               className="responsiveHeight"
               bg="blue.500"
               key={review.id}
+              p={20}
             >
               <Card sx={{ maxWidth: "100%" }}>
                 <CardHeader

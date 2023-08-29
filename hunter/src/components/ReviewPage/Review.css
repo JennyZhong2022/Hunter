@@ -1,15 +1,17 @@
 .reviewPage {
   background-color: #ebe7e0;
+  /* height: auto; */
 }
 
-.reviewLine {
-  margin: 0 1rem;
+.reviewPageGrid {
+  display: flex;
+  align-items: center;
 }
 
 /* Responsive height */
 @media (min-width: 1024px) {
   .responsiveHeight {
-    height: 395px;
+    height: 26rem;
   }
 }
 
@@ -18,9 +20,3 @@
     height: auto;
   }
 }
-
-/* @media (max-width: 720px) {
-  .reviewLine {
-    margin-left: 1rem;
-  }
-} */
