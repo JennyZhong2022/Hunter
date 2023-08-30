@@ -8,6 +8,7 @@ const About = () => {
     <div className="aboutPage">
       <h2 className="bigH">About Me</h2>
       <Stack
+        className="aboutPageContent"
         direction={isSmallerThan720 ? "column" : "row"}
         h="auto"
         p={isSmallerThan720 ? 8 : 110}

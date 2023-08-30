@@ -1,6 +1,7 @@
 import "./Nav.css";
 import { UilFacebookF } from "@iconscout/react-unicons";
 import { UilInstagram } from "@iconscout/react-unicons";
+import { useState, useEffect } from "react";
 
 const Nav = () => {
   const goFacebook = () => {
@@ -11,8 +12,32 @@ const Nav = () => {
     window.open("https://www.instagram.com/lyeeeee0225/");
   };
 
+  const [scrollPositions, setScrollPositions] = useState({});
+
+  useEffect(() => {
+    const calculateScrollPositions = () => {
+      const positions = {
+        home: 0,
+        about: window.innerHeight * 1,
+        growth: window.innerHeight * 1.9,
+        reviews: window.innerHeight * 3,
+        contact: window.innerHeight * 4.7,
+      };
+      setScrollPositions(positions);
+    };
+
+    // Recalculate scroll positions on resize
+    window.addEventListener("resize", calculateScrollPositions);
+    calculateScrollPositions(); // Initial calculation
+
+    return () => {
+      window.removeEventListener("resize", calculateScrollPositions);
+    };
+  }, []);
+
   const handleSpanClick = (event) => {
-    const newY = Number(event.currentTarget.getAttribute("data-scrollto"));
+    const target = event.currentTarget.getAttribute("data-target");
+    const newY = scrollPositions[target];
     window.scrollTo({
       top: newY,
       behavior: "smooth",
@@ -22,24 +47,24 @@ const Nav = () => {
   return (
     <div className="navContainer">
       <div className="leftText">
-        <span data-scrollto="0" onClick={handleSpanClick}>
+        <span data-target="home" onClick={handleSpanClick}>
           Hunter's Garden
         </span>
       </div>
       <div className="middleText">
-        <span data-scrollto="0" onClick={handleSpanClick}>
+        <span data-target="home" onClick={handleSpanClick}>
           Home
         </span>
-        <span data-scrollto="800" onClick={handleSpanClick}>
+        <span data-target="about" onClick={handleSpanClick}>
           About
         </span>
-        <span data-scrollto="1700" onClick={handleSpanClick}>
+        <span data-target="growth" onClick={handleSpanClick}>
           Hunter's growth
         </span>
-        <span data-scrollto="2700" onClick={handleSpanClick}>
+        <span data-target="reviews" onClick={handleSpanClick}>
           Reviews
         </span>
-        <span data-scrollto="4200" onClick={handleSpanClick}>
+        <span data-target="contact" onClick={handleSpanClick}>
           Contact
         </span>
       </div>

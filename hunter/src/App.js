@@ -5,6 +5,7 @@ import About from "./components/AboutPage/About";
 import Growth from "./components/GrowthPage/Growth";
 import Review from "./components/ReviewPage/Review";
 import Contact from "./components/ContactPage/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Growth />
       <Review />
       <Contact />
+      <Footer />
     </>
   );
 }

@@ -2,6 +2,7 @@ import { styled } from "@mui/material/styles";
 import hunterHomePage from "../../pictures/hunterHomePage.jpeg";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
+import { useState, useEffect } from "react";
 
 const images = {
   url: hunterHomePage,
@@ -75,17 +76,40 @@ const ImageMarked = styled("span")(({ theme }) => ({
 }));
 
 const Home = () => {
-  const handleSpanClick5 = () => {
-    const newY = window.screenTop + 4150;
+  const [scrollPositions, setScrollPositions] = useState({});
+
+  useEffect(() => {
+    const calculateScrollPositions = () => {
+      const totalHeight = document.documentElement.scrollHeight;
+      const position = {
+        bookHunter: totalHeight,
+      };
+      setScrollPositions(position);
+    };
+
+    // Recalculate scroll positions on resize
+    window.addEventListener("resize", calculateScrollPositions);
+    calculateScrollPositions(); // Initial calculation
+
+    return () => {
+      window.removeEventListener("resize", calculateScrollPositions);
+    };
+  }, []);
+
+  const handleSpanClick = (event) => {
+    const target = event.currentTarget.getAttribute("data-target");
+    const newY = scrollPositions[target];
     window.scrollTo({
       top: newY,
       behavior: "smooth",
     });
   };
+
   return (
     <div className="homePage">
       <ImageButton
-        onClick={handleSpanClick5}
+        data-target="bookHunter"
+        onClick={handleSpanClick}
         focusRipple
         style={{
           width: images.width,

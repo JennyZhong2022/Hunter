@@ -71,4 +71,8 @@
   .aboutPageTextRight {
     font-size: 0.8rem;
   }
+
+  .aboutPageContent {
+    margin: 0 1rem;
+  }
 }
