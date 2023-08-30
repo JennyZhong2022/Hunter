@@ -35,6 +35,10 @@ const Contact = () => {
         setTimeout(() => {
           setEmailStatus(null);
         }, 4000);
+
+        setYourName("");
+        setYourEmail("");
+        setYourMessage("");
       },
       (err) => {
         setEmailStatus("There was an error sending the email.");
@@ -106,6 +110,7 @@ const Contact = () => {
               label="Message"
               multiline
               rows={6}
+              value={yourMessage}
               variant="outlined"
               onChange={handleInputMessage}
             />

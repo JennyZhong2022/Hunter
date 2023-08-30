@@ -10,7 +10,7 @@ import { Grid, GridItem, useMediaQuery } from "@chakra-ui/react";
 
 import "./Review.css";
 
-const reviews1 = [
+const reviews = [
   {
     id: 1,
     name: "Jenny Zhong",
@@ -32,9 +32,7 @@ const reviews1 = [
     reviewContent:
       "We had an amazing experience with Hunter's Garden pet sitting service. They treated our pets like their own, providing regular updates and photos to put our minds at ease while we were away. We'll definitely be using their services again!",
   },
-];
 
-const reviews2 = [
   {
     id: 4,
     name: "Amy Sky",
@@ -57,11 +55,9 @@ const reviews2 = [
     reviewContent:
       "The team at Hunter's Garden is truly exceptional when it comes to pet sitting. They took the time to understand my pets' needs and preferences, and I returned home to find them happy, relaxed, and well-cared for. Their passion for what they do is evident in the quality of their work, and I couldn't be more thrilled with my experience. Hunter's Garden has earned a lifelong customer in me!",
   },
-];
 
-const reviews3 = [
   {
-    id: 6,
+    id: 7,
     name: "Michelle Sketon",
     year: 2022,
     reviewContent:
@@ -69,7 +65,7 @@ const reviews3 = [
   },
 
   {
-    id: 7,
+    id: 8,
     name: "Josh Apple",
     year: 2023,
     reviewContent:
@@ -96,7 +92,7 @@ const Review = () => {
       <h2 className="bigH">Review</h2>
       <div className="reviewPageGrid">
         <Grid templateColumns={getTemplateColumns()} gap={6}>
-          {[...reviews1, ...reviews2, ...reviews3].map((review) => (
+          {reviews.map((review) => (
             <GridItem
               w="100%"
               className="responsiveHeight"
