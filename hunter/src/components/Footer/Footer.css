@@ -14,4 +14,7 @@
   .footer {
     padding-bottom: 1rem;
   }
+  .footer p {
+    font-size: 0.9rem;
+  }
 }

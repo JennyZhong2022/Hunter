@@ -10,11 +10,12 @@
 }
 
 /* Media Queries to adjust GridItem height */
-
+/* Class added to GridItem in JSX */
+/* 
 @media screen and (max-width: 600px) {
   .gridItem {
-    /* Class added to GridItem in JSX */
-    height: 43.75rem !important; /* Override Chakra-UI height */
+    
+    height: 43.75rem !important;  /* Override Chakra-UI height
   }
 }
 
@@ -28,4 +29,4 @@
   .gridItem {
     height: 60rem !important;
   }
-}
+} */

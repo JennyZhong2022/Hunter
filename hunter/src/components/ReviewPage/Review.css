@@ -1,6 +1,5 @@
 .reviewPage {
   background-color: #ebe7e0;
-  /* height: auto; */
 }
 
 .reviewPageGrid {
@@ -8,7 +7,6 @@
   align-items: center;
 }
 
-/* Responsive height */
 @media (min-width: 1024px) {
   .responsiveHeight {
     height: 26rem;
