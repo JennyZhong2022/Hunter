@@ -62,7 +62,7 @@
   }
 }
 
-@media screen and (max-width: 720rem) {
+@media screen and (max-width: 720px) {
   .bigH {
     font-size: 2rem;
   }
