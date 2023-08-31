@@ -88,7 +88,7 @@ const Review = () => {
   };
 
   return (
-    <div className="reviewPage">
+    <div id="reviews" className="reviewPage">
       <h2 className="bigH">Review</h2>
       <div className="reviewPageGrid">
         <Grid templateColumns={getTemplateColumns()} gap={6}>

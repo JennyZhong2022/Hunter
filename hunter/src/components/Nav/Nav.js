@@ -18,10 +18,10 @@ const Nav = () => {
     const calculateScrollPositions = () => {
       const positions = {
         home: 0,
-        about: window.innerHeight * 1,
-        growth: window.innerHeight * 1.9,
-        reviews: window.innerHeight * 3,
-        contact: window.innerHeight * 4.7,
+        about: document.getElementById("about").offsetTop,
+        growth: document.getElementById("growth").offsetTop,
+        reviews: document.getElementById("reviews").offsetTop,
+        contact: document.getElementById("contact").offsetTop,
       };
       setScrollPositions(positions);
     };

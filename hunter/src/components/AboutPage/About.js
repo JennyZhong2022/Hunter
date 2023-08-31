@@ -5,7 +5,7 @@ const About = () => {
   const [isSmallerThan720] = useMediaQuery("(max-width: 720px)");
 
   return (
-    <div className="aboutPage">
+    <div id="about" className="aboutPage">
       <h2 className="bigH">About Me</h2>
       <Stack
         className="aboutPageContent"

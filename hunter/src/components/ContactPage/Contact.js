@@ -66,7 +66,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="contactPage">
+      <div id="contact" className="contactPage">
         <h2 className="bigH">Contact Me</h2>
         <Stack
           direction={isSmallerThan720 ? "column" : "row"}

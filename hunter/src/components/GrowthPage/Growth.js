@@ -121,7 +121,7 @@ const Growth = () => {
   };
 
   return (
-    <div className="growthPage">
+    <div id="growth" className="growthPage">
       <h2 className="bigH">Growth Journey</h2>
       <div className="growthPageGrid">
         <Grid templateColumns={getTemplateColumns} gap={6}>

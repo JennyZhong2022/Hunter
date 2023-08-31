@@ -80,9 +80,9 @@ const Home = () => {
 
   useEffect(() => {
     const calculateScrollPositions = () => {
-      const totalHeight = document.documentElement.scrollHeight;
+      // const totalHeight = document.documentElement.scrollHeight;
       const position = {
-        bookHunter: totalHeight,
+        bookHunter: document.getElementById("contact").offsetTop,
       };
       setScrollPositions(position);
     };
