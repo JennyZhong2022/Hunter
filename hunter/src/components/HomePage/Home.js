@@ -80,20 +80,14 @@ const Home = () => {
 
   useEffect(() => {
     const calculateScrollPositions = () => {
-      // const totalHeight = document.documentElement.scrollHeight;
+      const totalHeight = document.documentElement.scrollHeight;
       const position = {
-        bookHunter: document.getElementById("contact").offsetTop,
+        bookHunter: totalHeight,
       };
       setScrollPositions(position);
     };
 
-    // Recalculate scroll positions on resize
-    window.addEventListener("resize", calculateScrollPositions);
     calculateScrollPositions(); // Initial calculation
-
-    return () => {
-      window.removeEventListener("resize", calculateScrollPositions);
-    };
   }, []);
 
   const handleSpanClick = (event) => {

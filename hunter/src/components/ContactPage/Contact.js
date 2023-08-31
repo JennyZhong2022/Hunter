@@ -61,6 +61,7 @@ const Contact = () => {
     setYourMessage(e.target.value);
   };
 
+  const [isSmallerThan480] = useMediaQuery("(max-width: 480px)");
   const [isSmallerThan720] = useMediaQuery("(max-width: 720px)");
   const [isSmallerThan1024] = useMediaQuery("(max-width: 1024px)");
 
@@ -76,8 +77,16 @@ const Contact = () => {
           <div
             className={`leftContainer ${isSmallerThan720 ? "hideDiver" : ""}`}
           >
-            <PhoneEnabledIcon fontSize="large" />
-            <Text className="aboutPageTextLeft">0433080225</Text>
+            <div className="phoneContainer">
+              <PhoneEnabledIcon fontSize="large" />
+              {isSmallerThan480 ? (
+                <a href="tel:0433080225" className="aboutPageTextLeft">
+                  0433080225
+                </a>
+              ) : (
+                <Text className="aboutPageTextLeft">0433080225</Text>
+              )}
+            </div>
             <AlternateEmailIcon fontSize="large" />
             <Text className="aboutPageTextLeft">liuyeemail@gmail.com</Text>
             <img src={wechat} alt="weChat" />

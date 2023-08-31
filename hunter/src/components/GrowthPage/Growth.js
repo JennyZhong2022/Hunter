@@ -18,6 +18,12 @@ import bunningsFirst from "../../pictures/bunningsFirst.jpeg";
 import cityFirstTime from "../../pictures/cityFirstTime.jpeg";
 import graduate from "../../pictures/graduate.jpeg";
 import training3 from "../../pictures/training3.jpeg";
+import dogWalk from "../../pictures/dogWalk.jpg";
+import dogPlay from "../../pictures/dogPlay.jpg";
+import dogDessert from "../../pictures/dogDessert.jpg";
+import SixthBirthday from "../../pictures/sixthBirthday.jpg";
+import dogPlay2 from "../../pictures/dogPlay2.jpg";
+import birthdayDogs from "../../pictures/birthdayDogs.jpg";
 
 const imageData = [
   {
@@ -26,7 +32,7 @@ const imageData = [
     subheader: 2016,
     image: babyHunter,
     alt: "Baby Hunter",
-    height: 234,
+    height: 420,
     imageBrief:
       "Baby Hunter is an adorable little one who brings joy and laughter to everyone around him.",
     imageContent:
@@ -38,7 +44,7 @@ const imageData = [
     subheader: 2016,
     image: training3,
     alt: "Training Session",
-    height: 234,
+    height: 420,
     imageBrief:
       "During his Training Session, Baby Hunter demonstrated an eagerness to learn and explore new skills.",
     imageContent:
@@ -62,7 +68,7 @@ const imageData = [
     subheader: 2016,
     image: cityFirstTime,
     alt: "Melbourne City Travel",
-    height: 234,
+    height: 420,
     imageBrief:
       "Baby Hunter embarked on an exciting adventure to Melbourne City, where he discovered the city's vibrant culture and stunning architecture.",
     imageContent:
@@ -78,7 +84,81 @@ const imageData = [
     imageBrief:
       "Baby Hunter's first shopping trip to Bunnings was a delightful and educational experience.",
     imageContent:
-      " He marveled at the vast array of products, from gardening tools to home improvement items. This initial visit to Bunnings ignited Baby Hunter's curiosity in DIY projects and taught him the value of self-sufficiency and resourcefulness.",
+      "He marveled at the vast array of products, from gardening tools to home improvement items. This initial visit to Bunnings ignited Baby Hunter's curiosity in DIY projects and taught him the value of self-sufficiency and resourcefulness.",
+  },
+
+  {
+    id: 6,
+    title: "Dog Walk",
+    subheader: 2020,
+    image: dogWalk,
+    alt: "Dog Walk",
+    height: 420,
+    imageBrief:
+      "Taking leisurely strolls with our furry friend became a daily routine.",
+    imageContent:
+      "The serene moments during our dog walks allowed us to appreciate nature and bond with our loyal companion.",
+  },
+  {
+    id: 7,
+    title: "Dog Play",
+    subheader: 2020,
+    image: dogPlay,
+    alt: "Dog Play",
+    height: 420,
+    imageBrief:
+      "Engaging in playful activities with our dog brought immense joy to our lives.",
+    imageContent:
+      "Whether it was a game of fetch or a fun session of tug-of-war, the bond between us and our canine friend grew stronger with every playtime.",
+  },
+  {
+    id: 8,
+    title: "Dog Play",
+    subheader: 2021,
+    image: dogPlay2,
+    alt: "Dog Play",
+    height: 420,
+    imageBrief:
+      "Unleashing joy through playful moments with our four-legged companion.",
+    imageContent:
+      "Our dog's boundless energy and enthusiasm brought a refreshing and heartwarming dynamic to our daily routines.",
+  },
+  {
+    id: 9,
+    title: "Having Dessert",
+    subheader: 2021,
+    image: dogDessert,
+    alt: "Having Dessert",
+    height: 420,
+    imageBrief:
+      "Indulging in delicious desserts became a sweet tradition we looked forward to.",
+    imageContent:
+      "Sharing laughter and delightful treats with loved ones made these dessert moments truly special and memorable.",
+  },
+
+  {
+    id: 10,
+    title: "Celebrate Birthday",
+    subheader: 2020,
+    image: birthdayDogs,
+    alt: "My Birthday with my Friend",
+    height: 420,
+    imageBrief:
+      "A joyous celebration of another year with a dear friend by my side.",
+    imageContent:
+      "Surrounded by laughter, good company, and a cake that radiated happiness, this birthday will forever remain a cherished memory between friends.",
+  },
+  {
+    id: 11,
+    title: "My Birthday",
+    subheader: 2023,
+    image: SixthBirthday,
+    alt: "My Birthday",
+    height: 420,
+    imageBrief:
+      "Celebrating another year of life surrounded by friends and family.",
+    imageContent:
+      "The warmth of well-wishes, the joy of shared moments, and the promise of new adventures defined this unforgettable birthday celebration.",
   },
 ];
 
